@@ -3,7 +3,7 @@ import time
 import pyperclip
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyBG2sTKBDfoaffKLR0x1HngTVj8cabn1V0")
+genai.configure(api_key="Your Api key")
 
 # Step 1: Load the model
 model = genai.GenerativeModel(model_name="gemini-2.5-flash")
