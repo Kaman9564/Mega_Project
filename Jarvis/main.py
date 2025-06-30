@@ -7,13 +7,13 @@ import google.generativeai as genai
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
-newsapi="2d8ada824c7a456f9a5d079890a0d8b"
+newsapi="your api key"
 def speak(text):
     engine.say(text)
     engine.runAndWait( )
 
 def aiprocess(command):
-    genai.configure(api_key="AIzaSyBG2sTKBDfoaffKLR0x1HngTVj8cabn1V0")
+    genai.configure(api_key="your api key")
     model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(command)
     return response.text
@@ -36,7 +36,7 @@ def processCommand(c):
         link = musiclibrary.music[song]
         webbrowser.open(link)
     elif "news" in c.lower():
-        r = requests.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=2d8ada824c7a456f9a5d079890a0d8b")
+        r = requests.get("https://newsapi.org/v2/top-headlines?country=us&apiKey={newsapi}")
         #Parse the JSON response
         data = r.json()
         if data["status"] == "ok":
